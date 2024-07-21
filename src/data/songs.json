@@ -1,0 +1,60 @@
+{
+    "tracks": [
+      {
+        "id": "track1",
+        "title": "Happy Vibes",
+        "artist": "Joyful Beats",
+        "genre": "Pop",
+        "audio": "path/to/happy-vibes.mp3"
+      },
+      {
+        "id": "track2",
+        "title": "Adventure Awaits",
+        "artist": "Explorer Tunes",
+        "genre": "Rock",
+        "audio": "path/to/adventure-awaits.mp3"
+      },
+      {
+        "id": "track3",
+        "title": "Summer Fun",
+        "artist": "Sunny Days",
+        "genre": "Dance",
+        "audio": "path/to/summer-fun.mp3"
+      }
+    ],
+    "playlists": [
+      {
+        "id": "playlist1",
+        "name": "Top Hits for Teens",
+        "tracks": ["track1", "track3"]
+      },
+      {
+        "id": "playlist2",
+        "name": "Feel-Good Tunes",
+        "tracks": ["track1", "track2"]
+      },
+      {
+        "id": "playlist3",
+        "name": "Dance Party",
+        "tracks": ["track3"]
+      }
+    ],
+    "recommendations": [
+      {
+        "id": "rec1",
+        "title": "Upbeat Anthem",
+        "reason": "Perfect for dancing and fun!"
+      },
+      {
+        "id": "rec2",
+        "title": "Inspirational Beats",
+        "reason": "Great for motivation and positive vibes!"
+      },
+      {
+        "id": "rec3",
+        "title": "Fun in the Sun",
+        "reason": "Ideal for summer days and outdoor activities!"
+      }
+    ]
+  }
+  

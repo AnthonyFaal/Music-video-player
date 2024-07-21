@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../style/music.css">
+</head>
+<body>
+  <div class="main-container">
+    <div class="music-page">
+      <div class="search-bar">
+        <input type="text" placeholder="Search by song title, artist, or genre">
+        <button type="submit"><i class="material-icons">search</i></button>
+      </div>
+      <div class="music-list">
+        <h2><i class="material-icons">music_note</i> Music Tracks</h2>
+        <div id="tracks"></div>
+      </div>
+      <div class="playlists">
+        <h2><i class="material-icons">playlist_play</i> Playlists</h2>
+        <div id="playlists"></div>
+      </div>
+      <div class="recommendations">
+        <h2><i class="material-icons">star</i> Recommendations</h2>
+        <div id="recommendations"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/music.js"></script>
+</body>
+</html>

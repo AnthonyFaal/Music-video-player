@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <link rel="stylesheet" href="../style/videos.css">
+</head>
+<body>
+    <div class="videos-page">
+        <header>
+            <h1>Videos</h1>
+            <input type="text" id="searchInput" placeholder="Search by title, creator, or genre">
+        </header>
+        <div id="videoList" class="video-list"></div>
+        <div id="videoDetails" class="video-details" style="display: none;">
+            <h2 id="videoTitle"></h2>
+            <video id="videoPlayer" controls></video>
+            <div class="video-controls">
+                <button id="likeButton">Like</button>
+                <button id="shareButton">Share</button>
+                <button id="commentButton">Comment</button>
+            </div>
+            <div id="videoComments" class="video-comments"></div>
+        </div>
+        <div id="recommendations" class="recommendations"></div>
+    </div>
+    <script src="../js/videos.js"></script>
+</body>
+</html>

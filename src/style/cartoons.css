@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cartoon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.cartoon-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cartoon-item img {
+    width: 100%;
+    height: auto;
+}
+
+.cartoon-item h3 {
+    margin: 0;
+    padding: 10px;
+}
+
+.cartoon-item button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cartoon-item button:hover {
+    background-color: #555;
+}
+
+.cartoon-details {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.cartoon-controls {
+    margin: 10px 0;
+}
+
+.cartoon-controls button {
+    margin-right: 10px;
+}
+
+.recommendations {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

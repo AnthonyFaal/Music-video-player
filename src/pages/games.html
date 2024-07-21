@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/games.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .game-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .game-category {
+            margin-bottom: 30px;
+        }
+        .game-category h2 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #333;
+        }
+        .game {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .game h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #007bff;
+        }
+        .game button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .game button:hover {
+            background-color: #0056b3;
+        }
+        .game iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: calc(100% - 100px);
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Games Page</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search games by title or category...">
+            <button type="submit">Search</button>
+        </div>
+        
+        <div id="gameCategories">
+            <!-- Puzzle Games -->
+            <div class="game-category">
+                <h2>Popular Games</h2>
+                
+                <div class="game">
+                    <h3>Tetris</h3>
+                    <iframe src="https://tetris.com/play-tetris" title="Tetris"></iframe>
+                    <button onclick="startGame('tetris')">Play Game</button>
+                </div>
+                
+                <div class="game">
+                    <h3>2048</h3>
+                    <iframe src="https://play2048.co/" title="2048"></iframe>
+                    <button onclick="startGame('2048')">Play Game</button>
+                </div>
+                
+                <div class="game">
+                    <h3>Flappy Bird</h3>
+                    <iframe src="https://flappybird.io/" title="Flappy Bird"></iframe>
+                    <button onclick="startGame('flappy-bird')">Play Game</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const games = document.querySelectorAll('.game-category .game');
+            games.forEach(game => {
+                const title = game.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        });
+
+        function startGame(gameType) {
+            alert(`Starting the ${gameType.replace('-', ' ')}...`);
+            // Add actual game starting logic here if needed
+        }
+    </script>
+</body>
+</html>

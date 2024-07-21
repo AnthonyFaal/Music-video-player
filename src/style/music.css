@@ -1,0 +1,122 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+.main-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.music-page {
+  margin-top: 20px;
+}
+
+.music-page .search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.music-page .search-bar input {
+  padding: 12px;
+  width: 80%;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.music-page .search-bar button {
+  padding: 12px;
+  border: none;
+  background-color: #ff5722;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.music-list, .playlists, .recommendations {
+  margin: 0 auto;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.music-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.music-item h3, .music-item p {
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.controls button {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls .play {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.controls .pause {
+  background-color: #ffeb3b;
+  color: #000;
+}
+
+.controls .skip {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.playlists, .recommendations {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.playlist, .recommendation {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.music-item .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .music-page .search-bar input {
+    width: 70%;
+  }
+}

@@ -1,0 +1,133 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Matching the font across all pages */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Consistent background color with the music page */
+}
+
+header {
+    background-color: #333; /* Dark header to match other pages */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.video-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.video-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow with other pages */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.video-item img {
+    width: 100%;
+    height: auto;
+}
+
+.video-item h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.video-item button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #ff5722; /* Matching button color */
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+    transition: background-color 0.3s ease;
+}
+
+.video-item button:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+.video-details {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.video-controls {
+    margin: 10px 0;
+}
+
+.video-controls button {
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#likeButton {
+    background-color: #4caf50; /* Green for like */
+}
+
+#shareButton {
+    background-color: #2196f3; /* Blue for share */
+}
+
+#commentButton {
+    background-color: #ff9800; /* Orange for comment */
+}
+
+#likeButton:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+#shareButton:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+}
+
+#commentButton:hover {
+    background-color: #f57c00; /* Darker orange on hover */
+}
+
+.recommendations {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+}

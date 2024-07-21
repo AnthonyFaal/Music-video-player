@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "title": "General Knowledge Quiz",
+        "topic": "General Knowledge",
+        "questions": [
+            {
+                "question": "What is the capital of France?",
+                "options": ["Berlin", "Madrid", "Paris", "Rome"],
+                "answer": "Paris",
+                "explanation": "Paris is the capital of France."
+            },
+            {
+                "question": "Who wrote 'To Kill a Mockingbird'?",
+                "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+                "answer": "Harper Lee",
+                "explanation": "'To Kill a Mockingbird' was written by Harper Lee."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Science Quiz",
+        "topic": "Science",
+        "questions": [
+            {
+                "question": "What is the chemical symbol for water?",
+                "options": ["H2O", "CO2", "O2", "NaCl"],
+                "answer": "H2O",
+                "explanation": "H2O is the chemical symbol for water."
+            },
+            {
+                "question": "How many planets are in our solar system?",
+                "options": ["7", "8", "9", "10"],
+                "answer": "8",
+                "explanation": "There are 8 planets in our solar system."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Entertainment Quiz",
+        "topic": "Entertainment",
+        "questions": [
+            {
+                "question": "Who won the Oscar for Best Actor in 2020?",
+                "options": ["Joaquin Phoenix", "Brad Pitt", "Leonardo DiCaprio", "Tom Hanks"],
+                "answer": "Joaquin Phoenix",
+                "explanation": "Joaquin Phoenix won the Oscar for Best Actor in 2020 for his role in 'Joker'."
+            },
+            {
+                "question": "Which movie features the character 'Jack Sparrow'?",
+                "options": ["Pirates of the Caribbean", "Avatar", "Inception", "The Matrix"],
+                "answer": "Pirates of the Caribbean",
+                "explanation": "Jack Sparrow is a character from 'Pirates of the Caribbean'."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Fun Facts Quiz",
+        "topic": "Fun Facts",
+        "questions": [
+            {
+                "question": "What is the most common color of toilet paper in France?",
+                "options": ["White", "Pink", "Blue", "Green"],
+                "answer": "Pink",
+                "explanation": "In France, the most common color of toilet paper is pink."
+            },
+            {
+                "question": "What animal can sleep for up to three years?",
+                "options": ["Bear", "Hibernating Frog", "Elephant", "Koala"],
+                "answer": "Hibernating Frog",
+                "explanation": "The hibernating frog can sleep for up to three years during hibernation."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Superheroes Quiz",
+        "topic": "Superheroes",
+        "questions": [
+            {
+                "question": "What is Spider-Man's real name?",
+                "options": ["Peter Parker", "Clark Kent", "Bruce Wayne", "Tony Stark"],
+                "answer": "Peter Parker",
+                "explanation": "Spider-Man's real name is Peter Parker."
+            },
+            {
+                "question": "Which superhero is known as the 'Man of Steel'?",
+                "options": ["Superman", "Iron Man", "Thor", "Captain America"],
+                "answer": "Superman",
+                "explanation": "Superman is often referred to as the 'Man of Steel'."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Cartoon Characters Quiz",
+        "topic": "Cartoons",
+        "questions": [
+            {
+                "question": "What is the name of the yellow sponge in 'SpongeBob SquarePants'?",
+                "options": ["SpongeBob", "Patrick", "Squidward", "Mr. Krabs"],
+                "answer": "SpongeBob",
+                "explanation": "The yellow sponge in 'SpongeBob SquarePants' is named SpongeBob."
+            },
+            {
+                "question": "Which cartoon character is known for his red hat and overalls?",
+                "options": ["Mario", "Luigi", "Wario", "Waluigi"],
+                "answer": "Mario",
+                "explanation": "Mario is known for his red hat and overalls."
+            }
+        ]
+    }
+]

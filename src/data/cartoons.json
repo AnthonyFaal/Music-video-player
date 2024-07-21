@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Superhero Squad",
+        "creator": "HeroMaker",
+        "genre": "Action",
+        "url": "https://example.com/cartoon1.mp4",
+        "thumbnail": "https://example.com/cartoon1_thumbnail.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Mystery Adventures",
+        "creator": "MysteryFan",
+        "genre": "Adventure",
+        "url": "https://example.com/cartoon2.mp4",
+        "thumbnail": "https://example.com/cartoon2_thumbnail.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Funny Animals",
+        "creator": "AnimalLover",
+        "genre": "Comedy",
+        "url": "https://example.com/cartoon3.mp4",
+        "thumbnail": "https://example.com/cartoon3_thumbnail.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Space Explorers",
+        "creator": "SpaceFan",
+        "genre": "Science Fiction",
+        "url": "https://example.com/cartoon4.mp4",
+        "thumbnail": "https://example.com/cartoon4_thumbnail.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Magical Creatures",
+        "creator": "FantasyWorld",
+        "genre": "Fantasy",
+        "url": "https://example.com/cartoon5.mp4",
+        "thumbnail": "https://example.com/cartoon5_thumbnail.jpg"
+    }
+]
