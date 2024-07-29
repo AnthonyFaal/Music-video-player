@@ -6,6 +6,18 @@ body {
   overflow: hidden;
 }
 
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Adjust height as needed */
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .app-bar {
   display: flex;
   align-items: center;
@@ -129,57 +141,105 @@ body {
   cursor: pointer;
 }
 
-.main-container {
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #ff9800;
+  padding-top: 60px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.sidebar.show {
+  display: flex;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
   text-align: center;
-  padding: 50px;
 }
 
-.main-container h1 {
-  font-size: 32px;
-  color: #333;
+.sidebar ul li {
+  margin: 15px 0;
 }
 
-.profile {
-  margin-top: 20px;
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.profile img {
-  height: 100px;
+.sidebar ul li a:hover {
+  color: #ffd54f;
+}
+
+.sidebar-icons .icon {
+  height: 40px;
+  margin: 20px 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.user-profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-profile-sidebar .avatar {
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
 }
 
-.profile p {
-  font-size: 24px;
-  font-weight: 500;
-  color: #555;
+.user-profile-sidebar .dropbtn {
   margin-top: 10px;
-}
-
-.material-icons {
-  color: white;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-links,
+  .search-bar,
+  .user-profile,
+  .icons {
     display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #ff9800;
-    padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-links.show {
-    display: flex;
   }
 
   .menu-icon {
     display: block;
-    cursor: pointer;
-    color: #fff;
   }
 }

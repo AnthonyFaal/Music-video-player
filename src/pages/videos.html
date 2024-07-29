@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/videos.css">
 </head>
 <body>
@@ -12,7 +12,9 @@
             <h1>Videos</h1>
             <input type="text" id="searchInput" placeholder="Search by title, creator, or genre">
         </header>
-        <div id="videoList" class="video-list"></div>
+        <div id="videoList" class="video-list">
+            <!-- Video cards will be dynamically added here -->
+        </div>
         <div id="videoDetails" class="video-details" style="display: none;">
             <h2 id="videoTitle"></h2>
             <video id="videoPlayer" controls></video>
@@ -23,7 +25,9 @@
             </div>
             <div id="videoComments" class="video-comments"></div>
         </div>
-        <div id="recommendations" class="recommendations"></div>
+        <div id="recommendations" class="recommendations">
+            <!-- Recommendation cards will be dynamically added here -->
+        </div>
     </div>
     <script src="../js/videos.js"></script>
 </body>

@@ -8,19 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../style/main.css">
-  <style>
-    .main-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: calc(100vh - 60px); /* Adjust height as needed */
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+ 
 </head>
 <body>
   <header>
@@ -55,7 +43,41 @@
         <i class="material-icons icon">notifications</i>
         <i class="material-icons icon">chat</i>
       </div>
+      <div class="menu-icon" id="menuIcon">
+        <i class="material-icons">menu</i>
+      </div>
     </nav>
+    <div class="sidebar" id="sidebar">
+      <div class="close-icon" id="closeIcon">
+        <i class="material-icons">close</i>
+      </div>
+      <div class="sidebar-content">
+        <div class="sidebar-icons">
+          <i class="material-icons icon">notifications</i>
+          <i class="material-icons icon">chat</i>
+        </div>
+        
+        <div class="user-profile-sidebar">
+          <img src="" alt="User Avatar" id="sidebarAvatar" class="avatar">
+          <div class="dropdown">
+            <button class="dropbtn" id="sidebarUsername">Profile</button>
+            <div class="dropdown-content">
+              <a href="#">My Profile</a>
+              <a href="#">Settings</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#" onclick="loadPage('music.html')">Music</a></li>
+          <li><a href="#" onclick="loadPage('games.html')">Games</a></li>
+          <li><a href="#" onclick="loadPage('videos.html')">Videos</a></li>
+          <li><a href="#" onclick="loadPage('cartoons.html')">Cartoons</a></li>
+          <li><a href="#" onclick="loadPage('quizzes.html')">Quizzes</a></li>
+        </ul>
+       
+      </div>
+    </div>
   </header>
   <div class="main-container">
     <iframe id="contentFrame" src="./music.html" title="Content"></iframe>
@@ -81,8 +103,19 @@
     const avatar = getQueryParam('avatar');
     if (username && avatar) {
       document.getElementById('username').textContent = username;
+      document.getElementById('sidebarUsername').textContent = username;
       document.getElementById('appAvatar').src = avatar;
+      document.getElementById('sidebarAvatar').src = avatar;
     }
+
+    // Toggle sidebar visibility and menu icon
+    document.getElementById('menuIcon').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.add('show');
+    });
+
+    document.getElementById('closeIcon').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.remove('show');
+    });
   </script>
 </body>
 </html>

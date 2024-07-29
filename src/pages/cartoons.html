@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartoons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/cartoons.css">
 </head>
 <body>
@@ -12,7 +13,9 @@
             <h1>Cartoons</h1>
             <input type="text" id="searchInput" placeholder="Search by title or genre">
         </header>
-        <div id="cartoonList" class="cartoon-list"></div>
+        <div id="cartoonList" class="cartoon-list">
+            <!-- Cartoon cards will be dynamically added here -->
+        </div>
         <div id="cartoonDetails" class="cartoon-details" style="display: none;">
             <h2 id="cartoonTitle"></h2>
             <video id="cartoonPlayer" controls></video>
@@ -23,7 +26,9 @@
             </div>
             <div id="cartoonComments" class="cartoon-comments"></div>
         </div>
-        <div id="recommendations" class="recommendations"></div>
+        <div id="recommendations" class="recommendations">
+            <!-- Recommendation cards will be dynamically added here -->
+        </div>
     </div>
     <script src="../js/cartoons.js"></script>
 </body>
