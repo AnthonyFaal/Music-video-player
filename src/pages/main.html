@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../style/main.css">
- 
 </head>
 <body>
   <header>
@@ -35,12 +34,18 @@
           <div class="dropdown-content">
             <a href="#">My Profile</a>
             <a href="#">Settings</a>
-            <a href="#">Logout</a>
+            <a href="#" id="logoutBtn">Logout</a>
           </div>
         </div>
       </div>
       <div class="icons">
-        <i class="material-icons icon">notifications</i>
+        <i class="material-icons icon" id="notificationsIcon">notifications</i>
+        <div class="notifications-dropdown" id="notificationsDropdown">
+          <h3>Notifications</h3>
+          <ul id="notificationsList">
+            <!-- Notifications will be appended here -->
+          </ul>
+        </div>
         <i class="material-icons icon">chat</i>
       </div>
       <div class="menu-icon" id="menuIcon">
@@ -56,7 +61,6 @@
           <i class="material-icons icon">notifications</i>
           <i class="material-icons icon">chat</i>
         </div>
-        
         <div class="user-profile-sidebar">
           <img src="" alt="User Avatar" id="sidebarAvatar" class="avatar">
           <div class="dropdown">
@@ -64,7 +68,7 @@
             <div class="dropdown-content">
               <a href="#">My Profile</a>
               <a href="#">Settings</a>
-              <a href="#">Logout</a>
+              <a href="#" id="logoutBtnSidebar">Logout</a>
             </div>
           </div>
         </div>
@@ -75,7 +79,6 @@
           <li><a href="#" onclick="loadPage('cartoons.html')">Cartoons</a></li>
           <li><a href="#" onclick="loadPage('quizzes.html')">Quizzes</a></li>
         </ul>
-       
       </div>
     </div>
   </header>
@@ -83,39 +86,6 @@
     <iframe id="contentFrame" src="./music.html" title="Content"></iframe>
   </div>
 
-  <script>
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-    function loadPage(page) {
-      const username = getQueryParam('username');
-      const avatar = getQueryParam('avatar');
-      const frame = document.getElementById('contentFrame');
-      
-      // Update the src attribute with query parameters
-      frame.src = `./${page}?username=${username}&avatar=${avatar}`;
-    }
-
-    // Set user data on page load
-    const username = getQueryParam('username');
-    const avatar = getQueryParam('avatar');
-    if (username && avatar) {
-      document.getElementById('username').textContent = username;
-      document.getElementById('sidebarUsername').textContent = username;
-      document.getElementById('appAvatar').src = avatar;
-      document.getElementById('sidebarAvatar').src = avatar;
-    }
-
-    // Toggle sidebar visibility and menu icon
-    document.getElementById('menuIcon').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.add('show');
-    });
-
-    document.getElementById('closeIcon').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.remove('show');
-    });
-  </script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ const users = [
       sessionStorage.setItem('loggedInUser', JSON.stringify(user));
       
       // Redirect to main.html with user data as URL parameters
-      window.location.href = `src/pages/main.html?username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(user.avatar)}`;
+      window.location.href = `main.html?username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(user.avatar)}`;
     } else {
       alert('Invalid email or password.');
     }
@@ -38,7 +38,7 @@ const users = [
     const loggedInUser = sessionStorage.getItem('loggedInUser');
     if (loggedInUser) {
       const user = JSON.parse(loggedInUser);
-      window.location.href = `src/pages/main.html?username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(user.avatar)}`;
+      window.location.href = `main.html?username=${encodeURIComponent(user.username)}&avatar=${encodeURIComponent(user.avatar)}`;
     }
   });
 
