@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting...</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      window.location.href = '/src/pages/login.html';
-    });
-  </script>
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style/login.css">
 </head>
 <body>
-  <p>If you are not redirected automatically, follow this <a href="/src/pages/login.html">link to login</a>.</p>
+  <div class="login-container">
+    <h1>Welcome to FunWorld</h1>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="icons">
+      <img src="https://th.bing.com/th?id=OIP.ri5WUbdKANXTG4xkU_o-uwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Music Icon">
+      <img src="data:image/jpeg;base64,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" alt="Movie Icon">
+   
+    </div>
+  </div>
+
+  <script src="src/js/login.js">
+</script>
 </body>
 </html>
