@@ -149,5 +149,15 @@ document.addEventListener('DOMContentLoaded', function () {
             return "Don't worry! Keep trying, and you'll get better!";
         }
     }
+
+    //Back button in Quizzes Page
+    document.getElementById('quizList').addEventListener('click', function() {
+        document.getElementById('backButton').classList.add('show');
+    });
     
-});
+    document.getElementById("backButton").addEventListener('click', function(){
+        document.getElementById('quizDetails').style.display = 'none';
+        document.getElementById('quizList').style.display = 'block';
+        document.getElementById('backButton').classList.remove('show');
+    });
+})

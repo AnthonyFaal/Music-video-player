@@ -8,7 +8,9 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Quizzes</h1>
+        <div class="back">
+            <h1>Quizzes<span id="backButtonSpan"><button onclick="goBack()" id="backButton">Back</button></span></h1>
+        </div>
         <input type="text" id="searchInput" placeholder="Search quizzes...">
         <div id="quizList"></div>
         <div id="quizDetails" style="display: none;">
