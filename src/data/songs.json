@@ -1,60 +1,71 @@
 {
-    "tracks": [
-      {
-        "id": "track1",
-        "title": "Happy Vibes",
-        "artist": "Joyful Beats",
-        "genre": "Pop",
-        "audio": "path/to/happy-vibes.mp3"
-      },
-      {
-        "id": "track2",
-        "title": "Adventure Awaits",
-        "artist": "Explorer Tunes",
-        "genre": "Rock",
-        "audio": "path/to/adventure-awaits.mp3"
-      },
-      {
-        "id": "track3",
-        "title": "Summer Fun",
-        "artist": "Sunny Days",
-        "genre": "Dance",
-        "audio": "path/to/summer-fun.mp3"
-      }
-    ],
-    "playlists": [
-      {
-        "id": "playlist1",
-        "name": "Top Hits for Teens",
-        "tracks": ["track1", "track3"]
-      },
-      {
-        "id": "playlist2",
-        "name": "Feel-Good Tunes",
-        "tracks": ["track1", "track2"]
-      },
-      {
-        "id": "playlist3",
-        "name": "Dance Party",
-        "tracks": ["track3"]
-      }
-    ],
-    "recommendations": [
-      {
-        "id": "rec1",
-        "title": "Upbeat Anthem",
-        "reason": "Perfect for dancing and fun!"
-      },
-      {
-        "id": "rec2",
-        "title": "Inspirational Beats",
-        "reason": "Great for motivation and positive vibes!"
-      },
-      {
-        "id": "rec3",
-        "title": "Fun in the Sun",
-        "reason": "Ideal for summer days and outdoor activities!"
-      }
-    ]
-  }
-  
+  "tracks": [
+    {
+      "id": "track1",
+      "title": "Happy Vibes",
+      "artist": "Joyful Beats",
+      "genre": "Pop",
+      "audio": "../assets/audios/MercyMe - Almost Home (Official Music Video)(MP3_160K).mp3"
+    },
+    {
+      "id": "track2",
+      "title": "Adventure Awaits",
+      "artist": "Explorer Tunes",
+      "genre": "Rock",
+      "audio": "../assets/audios/MercyMe - Better Days Coming (Official Lyric Video)(MP3_160K).mp3"
+    },
+    {
+      "id": "track3",
+      "title": "Summer Fun",
+      "artist": "Sunny Days",
+      "genre": "Dance",
+      "audio": "../assets/audios/MercyMe - Dear Younger Me (Official Lyric Video)(MP3_160K).mp3"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "playlist1",
+      "name": "Top Hits for Teens",
+      "tracks": [
+        "../assets/audios/MercyMe - Even If (Official Lyric Video)(MP3_160K).mp3",
+        "../assets/audios/MercyMe - I Can Only Imagine (The Movie Session - Official Music Video)(MP3_160K).mp3"
+      ]
+    },
+    {
+      "id": "playlist2",
+      "name": "Feel-Good Tunes",
+      "tracks": [
+        "../assets/audios/MercyMe - Shake (Official Music Video)(MP3_160K).mp3",
+        "../assets/audios/So Yesterday(MP3_160K).mp3",
+        "../assets/audios/1.mp3"
+
+      ]
+    },
+    {
+      "id": "playlist3",
+      "name": "Dance Party",
+      "tracks": [
+        "../assets/audios/The O_Jays - A Prayer (Official Audio)(MP3_160K).mp3",
+        "../assets/audios/MercyMe - Even If (Official Lyric Video)(MP3_160K).mp3",
+        "../assets/audios/MercyMe - Shake (Official Music Video)(MP3_160K).mp3"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec1",
+      "title": "Upbeat Anthem",
+      "reason": "Perfect for dancing and fun!"
+    },
+    {
+      "id": "rec2",
+      "title": "Inspirational Beats",
+      "reason": "Great for motivation and positive vibes!"
+    },
+    {
+      "id": "rec3",
+      "title": "Fun in the Sun",
+      "reason": "Ideal for summer days and outdoor activities!"
+    }
+  ]
+}

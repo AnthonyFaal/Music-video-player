@@ -39,35 +39,34 @@ header input {
     margin-bottom: 40px;
 }
 
-.video-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.video-card h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.video-card button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5722;
-    color: #fff;
+.video-item {
+    position: relative;
     cursor: pointer;
-    font-size: 16px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.video-card button:hover {
-    background-color: #e64a19;
+.video-item:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.video-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-item h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .video-details {
+    display: none;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -87,52 +86,25 @@ header input {
     margin-bottom: 20px;
 }
 
-.video-controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.video-controls button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5722;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.video-controls button:hover {
-    background-color: #e64a19;
-}
-
-.video-comments {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .recommendations {
     margin-top: 40px;
 }
 
-.recommendations h2 {
-    font-size: 24px;
-    color: #ff5722;
-    margin-bottom: 20px;
-}
-
-.recommendations .recommendation-card {
+.recommendation-item {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recommendations .recommendation-card h3 {
+.recommendation-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-item h4 {
     font-size: 20px;
     color: #333;
 }

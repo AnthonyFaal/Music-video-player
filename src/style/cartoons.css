@@ -21,7 +21,7 @@ header {
 
 header h1 {
     font-size: 32px;
-    color: #ff5722;
+    color: #ff5722; /* Consistent color scheme */
 }
 
 header input {
@@ -32,49 +32,48 @@ header input {
     width: 300px;
 }
 
-.cartoon-list {
+.video-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
 }
 
-.cartoon-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.cartoon-card h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.cartoon-card button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5722;
-    color: #fff;
+.cartoon-item {
+    position: relative;
     cursor: pointer;
-    font-size: 16px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.cartoon-card button:hover {
-    background-color: #e64a19;
+.cartoon-item:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
 }
 
-.cartoon-details {
+.cartoon-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cartoon-item h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.video-details {
+    display: none;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.cartoon-details h2 {
+.video-details h2 {
     font-size: 28px;
     color: #333;
     margin-bottom: 20px;
@@ -87,52 +86,25 @@ header input {
     margin-bottom: 20px;
 }
 
-.cartoon-controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.cartoon-controls button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5722;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.cartoon-controls button:hover {
-    background-color: #e64a19;
-}
-
-.cartoon-comments {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .recommendations {
     margin-top: 40px;
 }
 
-.recommendations h2 {
-    font-size: 24px;
-    color: #ff5722;
-    margin-bottom: 20px;
-}
-
-.recommendations .recommendation-card {
+.recommendation-item {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recommendations .recommendation-card h3 {
+.recommendation-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recommendation-item h4 {
     font-size: 20px;
     color: #333;
 }

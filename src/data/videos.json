@@ -1,82 +1,37 @@
 [
     {
         "id": 1,
-        "title": "Funny Cat Videos",
-        "creator": "CatLover123",
+        "title": "Memes 💃🕺",
         "genre": "Comedy",
-        "url": "https://example.com/video1.mp4",
-        "thumbnail": "https://example.com/video1_thumbnail.jpg"
+        "url": "../assets/videos/Memes No Copyright Free to use on YouTube videos..mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 2,
-        "title": "Amazing Science Experiments",
-        "creator": "ScienceGuy",
-        "genre": "Educational",
-        "url": "https://example.com/video2.mp4",
-        "thumbnail": "https://example.com/video2_thumbnail.jpg"
+        "title": "Key & Peele: Slave Auction",
+        "genre": "Comedy",
+        "url": "../assets/videos/Key & Peele - Auction Block.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 3,
-        "title": "Top 10 Music Hits",
-        "creator": "MusicFan",
-        "genre": "Music",
-        "url": "https://example.com/video3.mp4",
-        "thumbnail": "https://example.com/video3_thumbnail.jpg"
+        "title": "The Elevator Scene 🍕🍔",
+        "genre": "Comedy",
+        "url": "../assets/videos/Short film _The Elevator_.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 4,
-        "title": "Epic Adventure Stories",
-        "creator": "AdventureTime",
+        "title": "Key & Peele: The Substitute Teacher 😂",
         "genre": "Adventure",
-        "url": "https://example.com/video4.mp4",
-        "thumbnail": "https://example.com/video4_thumbnail.jpg"
+        "url": "../assets/videos/Substitute Teacher - Key & Peele.mp4",
+        "thumbnail":"../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 5,
-        "title": "Cool DIY Crafts",
-        "creator": "CraftyHands",
-        "genre": "DIY",
-        "url": "https://example.com/video5.mp4",
-        "thumbnail": "https://example.com/video5_thumbnail.jpg"
-    },
-    {
-        "id": 6,
-        "title": "Fun Math Tricks",
-        "creator": "MathWhiz",
-        "genre": "Educational",
-        "url": "https://example.com/video6.mp4",
-        "thumbnail": "https://example.com/video6_thumbnail.jpg"
-    },
-    {
-        "id": 7,
-        "title": "Amazing Magic Tricks",
-        "creator": "MagicMaster",
-        "genre": "Entertainment",
-        "url": "https://example.com/video7.mp4",
-        "thumbnail": "https://example.com/video7_thumbnail.jpg"
-    },
-    {
-        "id": 8,
-        "title": "Cute Animal Compilations",
-        "creator": "PetLover",
+        "title": "Iraq Insurgent Skit",
         "genre": "Comedy",
-        "url": "https://example.com/video8.mp4",
-        "thumbnail": "https://example.com/video8_thumbnail.jpg"
-    },
-    {
-        "id": 9,
-        "title": "How to Draw Anime",
-        "creator": "ArtGuru",
-        "genre": "DIY",
-        "url": "https://example.com/video9.mp4",
-        "thumbnail": "https://example.com/video9_thumbnail.jpg"
-    },
-    {
-        "id": 10,
-        "title": "Top 5 Video Game Tips",
-        "creator": "GamerX",
-        "genre": "Gaming",
-        "url": "https://example.com/video10.mp4",
-        "thumbnail": "https://example.com/video10_thumbnail.jpg"
+        "url": "../assets/videos/Iraq Insurgent Subtitles _ Sketch Comedy _ SkitHOUSE.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     }
 ]

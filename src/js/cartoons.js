@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cartoonList = document.getElementById('cartoonList');
     const cartoonDetails = document.getElementById('cartoonDetails');
-    const searchInput = document.getElementById('searchInput');
-    const cartoonTitle = document.getElementById('cartoonTitle');
     const cartoonPlayer = document.getElementById('cartoonPlayer');
-    const submitCommentButton = document.getElementById('commentButton');
-    const cartoonComments = document.getElementById('cartoonComments');
+    const cartoonTitle = document.getElementById('cartoonTitle');
+    const searchInput = document.getElementById('searchInput');
     const recommendations = document.getElementById('recommendations');
-
+    
     let cartoons = [];
-    let currentCartoon = null;
 
     function fetchCartoons() {
         fetch('../data/cartoons.json')
@@ -17,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 cartoons = data;
                 displayCartoons();
+                displayRecommendations();
             })
             .catch(error => console.error('Error fetching cartoons:', error));
     }
@@ -29,35 +27,35 @@ document.addEventListener('DOMContentLoaded', function () {
             cartoonElement.innerHTML = `
                 <img src="${cartoon.thumbnail}" alt="${cartoon.title}">
                 <h3>${cartoon.title}</h3>
-                <button data-id="${cartoon.id}">Watch Now</button>
             `;
+            cartoonElement.addEventListener('click', () => {
+                playCartoon(cartoon);
+            });
             cartoonList.appendChild(cartoonElement);
         });
     }
 
-    function displayCartoonDetails(cartoon) {
+    function playCartoon(cartoon) {
         cartoonTitle.textContent = cartoon.title;
         cartoonPlayer.src = cartoon.url;
+        cartoonDetails.style.display = 'block';
         cartoonPlayer.play();
-        submitCommentButton.style.display = 'block';
-        cartoonComments.innerHTML = ''; // Clear previous comments
-        displayRecommendations(); // Assuming recommendations are displayed here
+        cartoonList.style.display = 'none';
     }
 
     function displayRecommendations() {
-        recommendations.innerHTML = '<h3>Recommended For You</h3>';
-        // Example recommendations logic
-        cartoons.forEach(cartoon => {
-            if (cartoon.id !== currentCartoon.id) {
-                const recommendationElement = document.createElement('div');
-                recommendationElement.classList.add('cartoon-item');
-                recommendationElement.innerHTML = `
-                    <img src="${cartoon.thumbnail}" alt="${cartoon.title}">
-                    <h3>${cartoon.title}</h3>
-                    <button data-id="${cartoon.id}">Watch Now</button>
-                `;
-                recommendations.appendChild(recommendationElement);
-            }
+        recommendations.innerHTML = '<h3>Recommended Cartoons</h3>';
+        cartoons.slice(0, 5).forEach(cartoon => {
+            const recElement = document.createElement('div');
+            recElement.classList.add('recommendation-item');
+            recElement.innerHTML = `
+                <h4>${cartoon.title}</h4>
+                <button data-id="${cartoon.id}">Play</button>
+            `;
+            recElement.addEventListener('click', () => {
+                playCartoon(cartoon);
+            });
+            recommendations.appendChild(recElement);
         });
     }
 
@@ -72,34 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 cartoonElement.innerHTML = `
                     <img src="${cartoon.thumbnail}" alt="${cartoon.title}">
                     <h3>${cartoon.title}</h3>
-                    <button data-id="${cartoon.id}">Watch Now</button>
                 `;
+                cartoonElement.addEventListener('click', () => {
+                    playCartoon(cartoon);
+                });
                 cartoonList.appendChild(cartoonElement);
             });
     }
 
     searchInput.addEventListener('input', searchCartoons);
-
-    cartoonList.addEventListener('click', function (event) {
-        if (event.target.tagName === 'BUTTON') {
-            const cartoonId = event.target.getAttribute('data-id');
-            currentCartoon = cartoons.find(cartoon => cartoon.id === parseInt(cartoonId));
-            if (currentCartoon) {
-                displayCartoonDetails(currentCartoon);
-                cartoonDetails.style.display = 'block';
-                cartoonList.style.display = 'none';
-            }
-        }
-    });
-
-    submitCommentButton.addEventListener('click', function () {
-        const comment = prompt("Enter your comment:");
-        if (comment) {
-            const commentElement = document.createElement('p');
-            commentElement.textContent = comment;
-            cartoonComments.appendChild(commentElement);
-        }
-    });
 
     fetchCartoons();
 });

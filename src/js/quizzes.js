@@ -54,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function calculateResults() {
+        // Check if all questions are answered before calculating results
+        const checkedRadios = document.querySelectorAll('input[type="radio"]:checked');
+        if (checkedRadios.length !== currentQuiz.questions.length) {
+            alert('Please answer all questions before submitting.');
+            return;
+        }
+
         let score = 0;
         const questions = currentQuiz.questions;
         questions.forEach((question, index) => {
@@ -63,30 +70,37 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
+        // Determine result class based on score
+        let resultClass = 'poor';
+        if (score === questions.length) {
+            resultClass = 'good';
+        } else if (score >= questions.length / 2) {
+            resultClass = 'average';
+        }
+
         quizResult.innerHTML = `
             <p>Your score: ${score} / ${questions.length}</p>
             <h3>Explanations:</h3>
             ${questions.map(question => `
                 <p><strong>${question.question}</strong> - ${question.explanation}</p>
             `).join('')}
+            <h3>${getReassuringMessage(score, questions.length)}</h3>
         `;
+        quizResult.className = resultClass; // Apply the result class
         quizResult.style.display = 'block';
     }
 
-    function searchQuizzes() {
-        const searchTerm = searchInput.value.toLowerCase();
-        quizList.innerHTML = '';
-        quizzes
-            .filter(quiz => quiz.title.toLowerCase().includes(searchTerm) || quiz.topic.toLowerCase().includes(searchTerm))
-            .forEach(quiz => {
-                const quizElement = document.createElement('div');
-                quizElement.classList.add('quiz');
-                quizElement.innerHTML = `
-                    <h3>${quiz.title}</h3>
-                    <button data-id="${quiz.id}">Start Quiz</button>
-                `;
-                quizList.appendChild(quizElement);
-            });
+    function getReassuringMessage(score, total) {
+        const percentage = (score / total) * 100;
+        if (percentage === 100) {
+            return "Excellent! You're a quiz master!";
+        } else if (percentage >= 70) {
+            return "Great job! You have a solid understanding!";
+        } else if (percentage >= 50) {
+            return "Good effort! Keep practicing to improve further.";
+        } else {
+            return "Don't worry! Keep trying, and you'll get better!";
+        }
     }
 
     searchInput.addEventListener('input', searchQuizzes);
@@ -107,47 +121,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchQuizzes();
 
-    function calculateResults() {
-        let score = 0;
-        const questions = currentQuiz.questions;
-        questions.forEach((question, index) => {
-            const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-            if (selectedOption && selectedOption.value === question.answer) {
-                score++;
-            }
-        });
-    
-        // Determine result class based on score
-        let resultClass = 'poor';
-        if (score === questions.length) {
-            resultClass = 'good';
-        } else if (score >= questions.length / 2) {
-            resultClass = 'average';
-        }
-    
-        quizResult.innerHTML = `
-            <p>Your score: ${score} / ${questions.length}</p>
-            <h3>Explanations:</h3>
-            ${questions.map(question => `
-                <p><strong>${question.question}</strong> - ${question.explanation}</p>
-            `).join('')}
-            <h3>${getReassuringMessage(score, questions.length)}</h3>
-        `;
-        quizResult.className = resultClass; // Apply the result class
-        quizResult.style.display = 'block';
+    function searchQuizzes() {
+        const searchTerm = searchInput.value.toLowerCase();
+        quizList.innerHTML = '';
+        quizzes
+            .filter(quiz => quiz.title.toLowerCase().includes(searchTerm) || quiz.topic.toLowerCase().includes(searchTerm))
+            .forEach(quiz => {
+                const quizElement = document.createElement('div');
+                quizElement.classList.add('quiz');
+                quizElement.innerHTML = `
+                    <h3>${quiz.title}</h3>
+                    <button data-id="${quiz.id}">Start Quiz</button>
+                `;
+                quizList.appendChild(quizElement);
+            });
     }
-    
-    function getReassuringMessage(score, total) {
-        const percentage = (score / total) * 100;
-        if (percentage === 100) {
-            return "Excellent! You're a quiz master!";
-        } else if (percentage >= 70) {
-            return "Great job! You have a solid understanding!";
-        } else if (percentage >= 50) {
-            return "Good effort! Keep practicing to improve further.";
-        } else {
-            return "Don't worry! Keep trying, and you'll get better!";
-        }
-    }
-    
 });

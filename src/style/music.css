@@ -117,3 +117,29 @@ body {
     width: 150px;
   }
 }
+
+.player-controls .play-pause {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 36px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.player-controls .play-pause i.material-icons.play {
+  display: none;
+}
+
+.player-controls .play-pause i.material-icons.pause {
+  display: none;
+}
+
+.player-controls .play-pause.active .play {
+  display: inline;
+}
+
+.player-controls .play-pause:not(.active) .pause {
+  display: inline;
+}
+

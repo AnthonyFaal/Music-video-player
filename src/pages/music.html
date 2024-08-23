@@ -1,29 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../style/music.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff9800;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .music-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .music-list, .playlists, .recommendations {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-item, .playlist, .recommendation {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+
+        .music-item:hover, .playlist:hover, .recommendation:hover {
+            background: #f0f0f0;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .player-controls button {
+            background: transparent;
+            border: none;
+            color: #ff5722;
+            font-size: 36px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            width: 100%;
+            margin: 0 10px;
+        }
+
+        .current-time, .duration {
+            font-size: 14px;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 768px) {
+            .music-page {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="main-container">
-    <div class="music-page">
-      <div class="music-list">
-        <h2><i class="material-icons">music_note</i> Music Tracks</h2>
-        <div id="tracks"></div>
-      </div>
-      <div class="playlists">
-        <h2><i class="material-icons">playlist_play</i> Playlists</h2>
-        <div id="playlists"></div>
-      </div>
-      <div class="recommendations">
-        <h2><i class="material-icons">star</i> Recommendations</h2>
-        <div id="recommendations"></div>
-      </div>
+    <div class="main-container">
+        <div class="music-page">
+            <div class="music-list">
+                <h2><i class="material-icons">music_note</i> Music Tracks</h2>
+                <div id="tracks"></div>
+            </div>
+            <div class="playlists">
+                <h2><i class="material-icons">playlist_play</i> Playlists</h2>
+                <div id="playlists"></div>
+            </div>
+            <div class="recommendations">
+                <h2><i class="material-icons">star</i> Recommendations</h2>
+                <div id="recommendations"></div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="prev"><i class="material-icons">skip_previous</i></button>
+            <button class="play-pause"><i class="material-icons">play_arrow</i></button>
+            <button class="next"><i class="material-icons">skip_next</i></button>
+            <input type="range" class="progress-bar" value="0" min="0" max="100">
+            <div class="current-time">0:00</div>
+            <div class="duration">0:00</div>
+        </div>
     </div>
-  </div>
-  <script src="../js/music.js"></script>
+    <script src="../js/music.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ document.getElementById('closeIcon').addEventListener('click', () => {
 // Logout functionality
 document.getElementById('logoutBtn').addEventListener('click', function() {
   sessionStorage.removeItem('loggedInUser');
-  window.location.href = '../../login.html';  // Adjust the path according to your file structure
+  window.location.href = '../../index.html';  // Adjust the path according to your file structure
 });
 
 document.getElementById('logoutBtnSidebar').addEventListener('click', function() {

@@ -1,42 +1,47 @@
 [
     {
         "id": 1,
-        "title": "Superhero Squad",
-        "creator": "HeroMaker",
+        "title": "A Tale of Momentum",
         "genre": "Action",
-        "url": "https://example.com/cartoon1.mp4",
-        "thumbnail": "https://example.com/cartoon1_thumbnail.jpg"
+        "url": "../assets/cartoons/_A Tale Of Momentum & Inertia_ - Short Film.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 2,
         "title": "Mystery Adventures",
-        "creator": "MysteryFan",
         "genre": "Adventure",
-        "url": "https://example.com/cartoon2.mp4",
-        "thumbnail": "https://example.com/cartoon2_thumbnail.jpg"
+        "url": "../assets/cartoons/DETERIORADO.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 3,
-        "title": "Funny Animals",
-        "creator": "AnimalLover",
-        "genre": "Comedy",
-        "url": "https://example.com/cartoon3.mp4",
-        "thumbnail": "https://example.com/cartoon3_thumbnail.jpg"
+        "title": "CGI Animated Film",
+        "genre": "Adventure",
+        "url": "../assets/cartoons/CGI Animated Short Film_ _Watermelon A Cautionary Tale_ by Kefei Li & Connie Qin He _ CGMeetup.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 4,
-        "title": "Space Explorers",
-        "creator": "SpaceFan",
+        "title": "Run Away",
         "genre": "Science Fiction",
-        "url": "https://example.com/cartoon4.mp4",
-        "thumbnail": "https://example.com/cartoon4_thumbnail.jpg"
+        "url": "../assets/cartoons/Rainy Day [short 30 sec animation].mp4",
+        "thumbnail":"../assets/images/vector-video-player-941434_1280.png"
     },
     {
         "id": 5,
-        "title": "Magical Creatures",
-        "creator": "FantasyWorld",
+        "title": "Rainy Day",
         "genre": "Fantasy",
-        "url": "https://example.com/cartoon5.mp4",
-        "thumbnail": "https://example.com/cartoon5_thumbnail.jpg"
+        "url": "../assets/cartoons/Rainy Day [short 30 sec animation].mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
+    },
+
+    {
+        
+        "id": 6,
+        "title": "Spring short",
+        "genre": "Adventure",
+        "url": "../assets/cartoons/Spring Short from Cuetube.mp4",
+        "thumbnail": "../assets/images/vector-video-player-941434_1280.png"
+    
     }
 ]

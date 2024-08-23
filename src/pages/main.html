@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../style/main.css">
+
 </head>
 <body>
   <header>
@@ -32,8 +33,6 @@
         <div class="dropdown">
           <button class="dropbtn" id="username">Profile</button>
           <div class="dropdown-content">
-            <a href="#">My Profile</a>
-            <a href="#">Settings</a>
             <a href="#" id="logoutBtn">Logout</a>
           </div>
         </div>
@@ -46,7 +45,6 @@
             <!-- Notifications will be appended here -->
           </ul>
         </div>
-        <i class="material-icons icon">chat</i>
       </div>
       <div class="menu-icon" id="menuIcon">
         <i class="material-icons">menu</i>
@@ -59,15 +57,12 @@
       <div class="sidebar-content">
         <div class="sidebar-icons">
           <i class="material-icons icon">notifications</i>
-          <i class="material-icons icon">chat</i>
         </div>
         <div class="user-profile-sidebar">
           <img src="" alt="User Avatar" id="sidebarAvatar" class="avatar">
           <div class="dropdown">
             <button class="dropbtn" id="sidebarUsername">Profile</button>
             <div class="dropdown-content">
-              <a href="#">My Profile</a>
-              <a href="#">Settings</a>
               <a href="#" id="logoutBtnSidebar">Logout</a>
             </div>
           </div>
@@ -82,10 +77,86 @@
       </div>
     </div>
   </header>
+
   <div class="main-container">
     <iframe id="contentFrame" src="./music.html" title="Content"></iframe>
   </div>
 
-  <script src="../js/main.js"></script>
+  <!-- Chatbot Container -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chat-header">
+      Chatbot
+      <span class="close-chat" id="closeChat">✖</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <!-- Chat messages will be appended here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+  <!-- Chat Icon -->
+  <div class="chat-icon" id="openChat">
+    <i class="material-icons">chat</i>
+  </div>
+<script src="../js/main.js"></script>
+  <script>
+    const chatIcon = document.getElementById('openChat');
+    const chatbotContainer = document.getElementById('chatbot');
+    const closeChat = document.getElementById('closeChat');
+
+    chatIcon.addEventListener('click', () => {
+      chatbotContainer.style.display = 'flex';
+      chatIcon.style.display = 'none';
+    });
+
+    closeChat.addEventListener('click', () => {
+      chatbotContainer.style.display = 'none';
+      chatIcon.style.display = 'flex';
+    });
+
+    const accessToken = "YOUR_DIALOGFLOW_CLIENT_ACCESS_TOKEN"; // Replace with your Dialogflow token
+    const baseUrl = `https://api.dialogflow.com/v1/query?v=20150910`;
+
+    function appendMessage(message, sender) {
+      const chatBody = document.getElementById('chatBody');
+      const messageElement = document.createElement('div');
+      messageElement.className = `message ${sender}`;
+      messageElement.textContent = message;
+      chatBody.appendChild(messageElement);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function sendMessage() {
+      const userInput = document.getElementById('userInput').value;
+      if (userInput.trim() === "") return;
+
+      appendMessage(userInput, 'user');
+      document.getElementById('userInput').value = "";
+
+      fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          query: userInput,
+          lang: 'en',
+          sessionId: '1234567890'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const botReply = data.result.fulfillment.speech;
+        appendMessage(botReply, 'bot');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
 </body>
 </html>

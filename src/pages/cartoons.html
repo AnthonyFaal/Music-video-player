@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartoons</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/cartoons.css">
+    <title>Cartoons</title>
 </head>
 <body>
-    <div class="cartoons-page">
+    <div class="cartoons-page"> <!-- Renamed this class to something fitting for cartoons -->
         <header>
             <h1>Cartoons</h1>
             <input type="text" id="searchInput" placeholder="Search by title or genre">
         </header>
-        <div id="cartoonList" class="cartoon-list">
+        <div id="cartoonList" class="video-list">
             <!-- Cartoon cards will be dynamically added here -->
         </div>
-        <div id="cartoonDetails" class="cartoon-details" style="display: none;">
+        <div id="cartoonDetails" class="video-details" style="display: none;">
             <h2 id="cartoonTitle"></h2>
-            <video id="cartoonPlayer" controls></video>
-            <div class="cartoon-controls">
-                <button id="likeButton">Like</button>
-                <button id="shareButton">Share</button>
-                <button id="commentButton">Comment</button>
-            </div>
-            <div id="cartoonComments" class="cartoon-comments"></div>
+            <video id="cartoonPlayer" controls autoplay></video>
+            <div id="cartoonComments" class="video-comments"></div>
         </div>
         <div id="recommendations" class="recommendations">
             <!-- Recommendation cards will be dynamically added here -->
         </div>
     </div>
-    <script src="../js/cartoons.js"></script>
+    <script src="../js/cartoons.js"></script> <!-- Ensure script is correctly linked -->
 </body>
 </html>
