@@ -136,4 +136,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 quizList.appendChild(quizElement);
             });
     }
+<<<<<<< HEAD
 });
+=======
+    
+    function getReassuringMessage(score, total) {
+        const percentage = (score / total) * 100;
+        if (percentage === 100) {
+            return "Excellent! You're a quiz master!";
+        } else if (percentage >= 70) {
+            return "Great job! You have a solid understanding!";
+        } else if (percentage >= 50) {
+            return "Good effort! Keep practicing to improve further.";
+        } else {
+            return "Don't worry! Keep trying, and you'll get better!";
+        }
+    }
+
+    //Back button in Quizzes Page
+    document.getElementById('quizList').addEventListener('click', function() {
+        document.getElementById('backButton').classList.add('show');
+    });
+    
+    document.getElementById("backButton").addEventListener('click', function(){
+        document.getElementById('quizDetails').style.display = 'none';
+        document.getElementById('quizList').style.display = 'block';
+        document.getElementById('backButton').classList.remove('show');
+    });
+})
+>>>>>>> 9e3c628a1744ed0449826552fa8cc42d2098e511
