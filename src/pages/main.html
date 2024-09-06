@@ -7,7 +7,11 @@
   <link rel="icon" href="../assets/images/icon.png" type="image/x-icon" class="icon"> <!-- Link to your favicon -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Google Fonts Link For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
   <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../style/bot.css">
 
 </head>
 <body>
@@ -98,65 +102,27 @@
   </div>
 
   <!-- Chat Icon -->
-  <div class="chat-icon" id="openChat">
-    <i class="material-icons">chat</i>
+  <button class="chatbot-toggler">
+    <span class="material-symbols-rounded">mode_comment</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Assistant</h2>
+      <span class="close-btn material-symbols-outlined">close</span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="material-symbols-outlined">smart_toy</span>
+        <p>Hi there <br>How can I help you today?</p>
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+      <span id="send-btn" class="material-symbols-rounded">send</span>
+    </div>
   </div>
 <script src="../js/main.js"></script>
-  <script>
-    const chatIcon = document.getElementById('openChat');
-    const chatbotContainer = document.getElementById('chatbot');
-    const closeChat = document.getElementById('closeChat');
-
-    chatIcon.addEventListener('click', () => {
-      chatbotContainer.style.display = 'flex';
-      chatIcon.style.display = 'none';
-    });
-
-    closeChat.addEventListener('click', () => {
-      chatbotContainer.style.display = 'none';
-      chatIcon.style.display = 'flex';
-    });
-
-    const accessToken = "YOUR_DIALOGFLOW_CLIENT_ACCESS_TOKEN"; // Replace with your Dialogflow token
-    const baseUrl = `https://api.dialogflow.com/v1/query?v=20150910`;
-
-    function appendMessage(message, sender) {
-      const chatBody = document.getElementById('chatBody');
-      const messageElement = document.createElement('div');
-      messageElement.className = `message ${sender}`;
-      messageElement.textContent = message;
-      chatBody.appendChild(messageElement);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function sendMessage() {
-      const userInput = document.getElementById('userInput').value;
-      if (userInput.trim() === "") return;
-
-      appendMessage(userInput, 'user');
-      document.getElementById('userInput').value = "";
-
-      fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          query: userInput,
-          lang: 'en',
-          sessionId: '1234567890'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        const botReply = data.result.fulfillment.speech;
-        appendMessage(botReply, 'bot');
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    }
-  </script>
+<script src="../js/bot.js"></script>
 </body>
 </html>
